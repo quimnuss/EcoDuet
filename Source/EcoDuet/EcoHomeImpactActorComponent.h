@@ -11,6 +11,7 @@
 #include "EcoPlantActor.h"
 #include "EcoGameModeHome.h"
 #include "EcoGameStateHome.h"
+#include "TimerManager.h"
 #include "EcoHomeImpactActorComponent.generated.h"
 
 
@@ -24,31 +25,40 @@ public:
 	// Sets default values for this component's properties
 	UEcoHomeImpactActorComponent();
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "EcoActor")
-	TSubclassOf<AEcoBaseActor> TargetActorClass;
-
 	UClass* OwnerActorClass;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "EcoActor")
-	float Fitness;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "EcoActor")
-	int SelfCarryingCapacity = 20;
+	FMatrix A;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "EcoActor")
+	FVector4 r;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "EcoActor")
+	FVector4 x0;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "EcoActor")
+	FVector4 x;
+
+	/* Handle to manage the timer */
+	FTimerHandle EcoDensitiesTimerHandle;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "EcoActor")
+	float EcoDensitiesUpdateTime = 1.0f;
 
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
+	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
+
 public:	
-	void ControlTargetSpecies();
+	FVector4 DotProduct(FMatrix A, FVector4 v);
 
-	void SuicideIfOverCapacity();
+	FVector4 VolterraTick(float DeltaTime);
 
-	void VoltkaTick();
-
-	// Called every frame
-	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+	void VoltkaTick(float DeltaTime);
+	void VoltkaUpdate();
 
 		
 };

@@ -14,7 +14,6 @@ class ECODUET_API AEcoGameStateHome : public AEcoGameStateBase
 {
 	GENERATED_BODY()
 
-public:
-	int RemainingCarryingCapacity = 20;
+
 	
 };
