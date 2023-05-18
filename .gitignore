@@ -76,3 +76,6 @@ DerivedDataCache/*
 # let's ignore all sotck and added content
 Content/*
 !Content/EcoDuet
+
+# huge assets
+Content/Media/Ambience/huge-birds-in-forest-on-sunny-day.wav
