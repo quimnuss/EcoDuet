@@ -20,7 +20,7 @@ UEcoHomeImpactActorComponent::UEcoHomeImpactActorComponent()
 	//]
 
 	//this->A = FMatrix(FPlane(-0.1, -0.3, 0, 0), FPlane(0.2, -0.1, 0, 0), FPlane(0, 0, -0.2, 0), FPlane(0, 0, -0.04, 0));
-	this->A = FMatrix(FPlane(-0.1, 0.2, 0, 0), FPlane(-0.3, -0.1, 0.1, 0), FPlane(0, -0.2, -0.04, 0), FPlane(0, 0, 0, 0));
+	this->A = FMatrix(FPlane(-0.1, 0.2, 0, 0), FPlane(-0.3, -0.1, 0.1, -0.05), FPlane(0, -0.2, -0.04, -0.1), FPlane(-0.2, -0.1, -0.05, 0.2));
 
 	//this->A.M[0][0] = -0.1;
 	//this->A.M[1][0] = 0.2;
@@ -42,9 +42,9 @@ UEcoHomeImpactActorComponent::UEcoHomeImpactActorComponent()
 	//this->A.M[2][3] = 0;
 	//this->A.M[3][3] = 0;
 
-	this->r = FVector4(-0.3, 0.08, 0.8, 0.);
+	this->r = FVector4(-0.3, -0.04, 0.8, -0.05);
 
-	this->x0 = FVector4(0.6, 1.5, 10., 0.);
+	this->x0 = FVector4(0.6, 1.5, 10., 2.0);
 	this->x = x0;
 
 
@@ -115,6 +115,16 @@ void UEcoHomeImpactActorComponent::VoltkaTick(float DeltaTime)
 	this->x = GameMode->EcologyDensities;
 
 	FVector4 new_x = VolterraTick(DeltaTime);
+
+	// ! TODO the extinction threshold should probably not be controlled here
+	//probably save it to the refactor of N species
+	for (int i = 0; i < 4; i++)
+	{
+		if (new_x[i] < 0.01)
+		{
+			new_x[i] = 0;
+		}
+	}
 
 	this->x = new_x;
 	GameMode->EcologyDensities = new_x;
