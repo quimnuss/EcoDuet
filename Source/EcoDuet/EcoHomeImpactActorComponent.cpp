@@ -20,27 +20,13 @@ UEcoHomeImpactActorComponent::UEcoHomeImpactActorComponent()
 	//]
 
 	//this->A = FMatrix(FPlane(-0.1, -0.3, 0, 0), FPlane(0.2, -0.1, 0, 0), FPlane(0, 0, -0.2, 0), FPlane(0, 0, -0.04, 0));
-	this->A = FMatrix(FPlane(-0.1, 0.2, 0, 0), FPlane(-0.3, -0.1, 0.1, -0.05), FPlane(0, -0.2, -0.04, -0.1), FPlane(-0.2, -0.1, -0.05, 0.2));
-
-	//this->A.M[0][0] = -0.1;
-	//this->A.M[1][0] = 0.2;
-	//this->A.M[2][0] = 0;
-	//this->A.M[3][0] = 0;
-	//
-	//this->A.M[0][1] = -0.3;
-	//this->A.M[1][1] = -0.1;
-	//this->A.M[2][1] = 0.1;
-	//this->A.M[3][1] = 0;
-
-	//this->A.M[0][2] = 0;
-	//this->A.M[1][2] = 0;
-	//this->A.M[2][2] = -0.2;
-	//this->A.M[3][2] = -0.04;
-
-	//this->A.M[0][3] = 0;
-	//this->A.M[1][3] = 0;
-	//this->A.M[2][3] = 0;
-	//this->A.M[3][3] = 0;
+	//original matrix
+	this->A = FMatrix(
+		FPlane(-0.1,  0.2,     0,     0),
+		FPlane(-0.3, -0.1,   0.1, -0.05),
+		FPlane(   0, -0.2, -0.04, -0.1),
+		FPlane(-0.2, -0.1, -0.05,  0.2)
+	);
 
 	this->r = FVector4(-0.3, -0.04, 0.8, -0.05);
 
