@@ -9,6 +9,8 @@ You play as Noke, an ecology studient trying to restore a World to a dynamic eco
 ## Next steps
 
 [ ] Make an empty map where you get the Elder tree seed and you can plant it (and gain the plant hability).
+[x] Make a procedural map for the tree Elder
+[ ] Add three pedestal actors, if the player places three trees there, the tree seed will appear and or the tree Elder will appear. Or maybe the Elder tree should be there already.
 
 ### Fase 0
 
@@ -60,7 +62,38 @@ How could we measure successful ecosystem?
 * Great cycles
 * Robustness to outside perturbations?
 
+
+### About dungeons
+
+Dungeons strong point is their repeatibility and low commitment on good design. We need to get procedural dungeons so that we can play many levels we never got before and have high replayability. The problem is doing that without enemy-based dungeons. Puzzles must be handcrafted probably.
+
+One option is that puzzles are ecosystems with random species and variables. We might need a wave function so that we can guarantee it's solvable. We also must find a way to purposely create extinction starting conditions with a path to coexistence at design time. Or we could NOT do this and assume some puzzles will be unsolvable as part of the mechanic (hence the low commitment), you can restart the dungeon if it's unsolvable.
+
+Procedural levels in UE5 are mostly thought for ambience, but might also work for puzzles maybe? The point of that generation is that given a seed you get a different level, so let's ensure we use that! ideally NOT only for ambience. Might need a wave function collapse instead for our purposes?
+
+### About home
+
+Consider making a sandbox version of the game without dungeons nor limited spieces trees where the player can control all parameters of the r and interaction matrix.
+
+** UIs ideas **
+
+The Elders could have an icon over their head on approach that you can make smaller or bigger to represent 0.1 increments on predation. Grey=disabled when interaction is 0, red-green on predator-prey. The player can increase by raytracing and right-left clicking.
+
+The Elders have strikes, when their population gets below a certain density they get a strike. If the player doesn't solve the situation the Elder will go extinct. The player can artifically give nourishment to the Elder to get it temporarely out of pverty line, so the strikes should stay for a certain period of time to avoid cyclical manual survival -- or maybe it is ok, no player will want to manually maintain their species for long, or he might be free to do so.
+
+We could even add an Elder that _needs_ to be manually fed to survive. The player becomes its prey effectivelly (in a kind of simbiotic relationship). 
+
+Reaching certain populations in a stable manner might trigger choreagraphies to the animals, like crows banding toghether or something.
+
+The number of individuals can be tuned by a density multiplier which might be useful in low-end computers if the numbers become too great.
+
+Add an ecosystem diversity number stating the number of species and also the connectivity (e.g. how many NxN species have values > 0.05 in the interaction matrix, or directly how many elements of matrix A are >abs(0.05))
+
 ## Troubleshooting
 
 Visual Studio integration Tools is a third-party plugin so it might not be updated [in the marketplace](https://www.unrealengine.com/marketplace/en-US/product/362651520df94e4fa65492dbcba44ae2) as quickly as the unreal engine.
 If so you can clone [the repo](https://github.com/microsoft/vc-ue-extensions#building-and-installing-the-plugin) directly.
+
+## Some credits
+
+[GlacialIndifference](https://fontlibrary.org/en/font/glacial-indifference)
