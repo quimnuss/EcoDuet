@@ -60,5 +60,7 @@ public:
 	void VoltkaTick(float DeltaTime);
 	void VoltkaUpdate();
 
+	UFUNCTION(BlueprintCallable, category = "EcoActor")
+	void AddGLVParameters(int i, int j, float Delta);
 		
 };

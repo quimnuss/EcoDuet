@@ -83,6 +83,12 @@ void UEcoHomeImpactActorComponent::VoltkaUpdate()
 	VoltkaTick(EcoDensitiesUpdateTime);
 }
 
+void UEcoHomeImpactActorComponent::AddGLVParameters(int i, int j, float Delta)
+{
+	if (GEngine)
+		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, *FString::SanitizeFloat(Delta));
+}
+
 FVector4 UEcoHomeImpactActorComponent::VolterraTick(float DeltaTime)
 {
 	//GLV

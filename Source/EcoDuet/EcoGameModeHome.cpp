@@ -8,6 +8,16 @@ FVector4 AEcoGameModeHome::GetEcologyDensities()
 	return this->EcologyDensities;
 }
 
+void AEcoGameModeHome::SetEcoDensities(TMap<FString, float> NewEcoDensities)
+{
+	this->EcoDensities = NewEcoDensities;
+}
+
+TMap<FString, float> AEcoGameModeHome::GetEcoDensities()
+{
+	return this->EcoDensities;
+}
+
 void AEcoGameModeHome::SetEcologyDensities(FVector4 NewEcologyDensities)
 {
 	//TSubclassOf<AEcoBaseActor> ClassToFind = AEcoBaseActor::StaticClass();

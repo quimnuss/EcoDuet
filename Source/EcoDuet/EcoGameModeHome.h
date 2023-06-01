@@ -22,9 +22,18 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "EcoEcology")
 	FVector4 EcologyDensities;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "EcoEcology")
+	TMap<FString, float> EcoDensities;
+
+	TMap<FString, float> NextEcoDensities;
+
 public:
 	void SetEcologyDensities(FVector4 EcologyDensities);
 
 	FVector4 GetEcologyDensities();
+
+	void SetEcoDensities(TMap<FString, float> NewEcoDensities);
+
+	TMap<FString, float> GetEcoDensities();
 
 };
