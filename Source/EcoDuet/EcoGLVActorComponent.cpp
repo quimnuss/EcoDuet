@@ -21,7 +21,8 @@ void UEcoGLVActorComponent::BeginPlay()
 
 	Owner = this->GetOwner();
 	
-	
+	SpeciesName = this->ComponentTags.Num() > 0 ? this->ComponentTags[0] : "Unknown";
+		
 }
 
 void UEcoGLVActorComponent::EndPlay(const EEndPlayReason::Type EndPlayReason)
@@ -38,34 +39,50 @@ void UEcoGLVActorComponent::TickComponent(float DeltaTime, ELevelTick TickType, 
 	// ...
 }
 
-void UEcoGLVActorComponent::VoltkaTick(float DeltaTime)
+float UEcoGLVActorComponent::VoltkaTick(float DeltaTime, TMap<FName, float> Densities)
 {
 
-	AEcoGameModeHome* GameMode = Cast<AEcoGameModeHome>(UGameplayStatics::GetGameMode(this));
+	//AEcoGameModeHome* GameMode = Cast<AEcoGameModeHome>(UGameplayStatics::GetGameMode(this));
 
 	//TODO maybe this should be encompassed in a c++ class elder
 	// OR passed as an argument and returns newDensity
-	TMap<FString, float> Densities = GameMode->EcoDensities;
+	//TMap<FString, float> Densities = GameMode->EcoDensities;
 
+	if (!Densities.Contains(SpeciesName))
+	{
+		if (GEngine)
+		{
+			FString Error = FString::Printf(TEXT("VoltkaTickC++ Unknown species %s"), *SpeciesName.ToString());
+			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, *Error);
+		}
+		return 0;
+	}
 	
-	float OldDensity = Densities.FindRef(Owner->GetName());
+
+	float OldDensity = Densities.FindRef(SpeciesName);
 	float NewDensity = rate * OldDensity;
 
-	for (const TPair<FString, float>& EcoElderRelationPair : EcoElderRelationVector)
+	//if (GEngine)
+	//{
+	//	FString Info = FString::Printf(TEXT("Known species %s with density %f"), *SpeciesName.ToString(), OldDensity);
+	//	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, *Info);
+	//}
+
+	for (const TPair<FName, float>& EcoElderRelationPair : EcoElderRelationVector)
 	{
-		FString ElderName = EcoElderRelationPair.Key;
+		FName ElderName = EcoElderRelationPair.Key;
 		float Relation = EcoElderRelationPair.Value;
 		float OtherDensity = Densities.FindRef(ElderName);
 
-		NewDensity += OtherDensity * Relation * OldDensity;
+		NewDensity += OldDensity * Relation * OtherDensity;
 	}
 
-	NewDensity = OldDensity + DeltaTime / 10.0 * NewDensity;
+	NewDensity = OldDensity + 0.1f * NewDensity;
 
 	if (NewDensity < 0.01)
 		NewDensity = 0;
 
-	GameMode->NextEcoDensities[Owner->GetName()] = NewDensity;
+	return NewDensity;
 
 }
 

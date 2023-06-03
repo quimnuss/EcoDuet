@@ -4,56 +4,65 @@ A dungeon-based roguelike with an ecology-based home. Based on Generalized Lotka
 
 ## Description
 
-You play as Noke, an ecology studient trying to restore a World to a dynamic ecosystem. You can mold the environment and properties of the species to try to find robust equilibriums and keep increasing the diversity of each world you visit.
+You play as Noke, an ecology student trying to restore a World to a dynamic ecosystem. You can mold the environment and properties of the species to try to find robust equilibriums and keep increasing the diversity of each world you visit.
 
 ## Next steps
 
+### Immediate
+
+[ ] Add an interaction cube to modify r
+[ ] Actually write a help
+[ ] Let the player kill animals for now as a "debug"-ish tool to get the feel of the ecosystem dynamic
+[ ] Empty start Fase
+
+### Fase 0 : Basics
+
+[x] Game Over Logic and menu
+[x] Make a help screen that opens with the key h
+[ ] Actually write a help
+[ ] Show GLV parameters (at help?)
+[ ] Let the player kill animals for now as a "debug"-ish tool to get the feel of the ecosystem dynamic
+[x] Update the rates
+
+### Fase 1 : Sandbox
+
+[x] Add a way to modify species parameters. Should it be priority 1? Make Home really a sandbox?
+[ ] Add an interaction cube to modify r
+[ ] Change cube material color or light to show predation vs simbiosis
+[ ] Feedback on selected cube. E.g. turn on/off light to selected cube
+
+### Fase 2 : Empty start
+
+[ ] Make a pig elder seed, a fox elder seed and a stag elder seed.
 [ ] Make an empty map where you get the Elder tree seed and you can plant it (and gain the plant hability).
+
+### Fase 3 : Dungeoning
+
 [x] Make a procedural map for the tree Elder
 [ ] Add three pedestal actors, if the player places three trees there, the tree seed will appear and or the tree Elder will appear. Or maybe the Elder tree should be there already.
-
-### Fase 0
-
-[ ] Make a help screen that opens with the key h
-[ ] Let the player kill animals for now as a "debug"-ish tool to get the feel of the ecosystem dynamic
-[ ] Update the rates
-
-### Fase 1
-
-[ ] Make a pig elder seed and a fox elder seed.
-
 [ ] Build a change-map and make a dungeon map with the animal elder seeds in them.
 
-
-### Fase 2
-
-[ ] Add a way to modify species parameters. Should it be priority 1? Make Home really a sandbox?
-
-Ideas for later: make the species gain abilities so that you can unlock a new source of nourishment
-
-### Fase 3
+### Fase 4
 
 [ ] Then maybe either make the dungeon better
-
-or
-
-[ ] Move to the N-species
-
-or
-
-* [ ] Improve ecosystem health feedback
-	- Oracle: Computes N iterations and marks endangered elders
+[x] Move to the N-species
+[ ] Improve ecosystem health feedback. e.g. Oracle: Computes N iterations and marks endangered elders
 
 ### Whenever
 
 [ ] plant on raytrace or collision
 [ ] Fix the python multihome to support edit-save parameters (and maybe species deletion?)
 [ ] Check how to change character via config or something
-
-
-
+[ ] On equilibrium no Individual dies nor is born, since births compensate deaths in density only. It'd be nice to somehow still birth-die even if density stays constant.
+[ ] Birds
 
 ## Thoughts
+
+### Ideas for later
+
+make the species gain abilities so that you can unlock a new source of nourishment
+
+### Game design
 
 How could we measure successful ecosystem?
 
@@ -97,3 +106,15 @@ If so you can clone [the repo](https://github.com/microsoft/vc-ue-extensions#bui
 ## Some credits
 
 [GlacialIndifference](https://fontlibrary.org/en/font/glacial-indifference)
+
+An ai stable diffusion prompt I used for animal icons: four colors, crow, stylized, sketch, bird, flat, sunlit from the side, high contrast, few colors, thumbnail,   cartoon crow open wings, organic painting, cartoon, matte painting, bold shapes, hard edges, app icon, trending on artstation, by sachin teng, artgerm, rossdraws.
+
+# Design
+
+Each Elder has an GLVActor Component that holds the GLV multiplication function. The EcoSpeciesWatcher is the one with the two timers that compute the next GLV densities and another that Spawns/kills each species children.
+
+The GameMode holds a Map with a SpeciesName and its density. **Important** Each Elder GLVComponent has a Tag with its name which must be the same as the Elder EcoName. I couldn't find a way to have a unique Name in Blueprint accessible from C++. I have to create a baseElderActor C++ class with it, but seemed like an overkill to do a reparent just to have a name accessible to a c++ function.
+
+# Typical mistakes to remember
+
+Animal childs have to be set to auto-possess when placed into the world or spawned

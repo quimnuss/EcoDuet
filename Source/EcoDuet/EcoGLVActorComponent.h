@@ -13,6 +13,14 @@
 #include "TimerManager.h"
 #include "EcoGLVActorComponent.generated.h"
 
+UENUM(BlueprintType)
+enum class EEcoSpeciesType : uint8 {
+	EcoFox   UMETA(DisplayName = "Fox"),
+	EcoGrass UMETA(DisplayName = "Grass"),
+	EcoPig   UMETA(DisplayName = "Pig"),
+	EcoStag  UMETA(DisplayName = "Stag"),
+};
+
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class ECODUET_API UEcoGLVActorComponent : public UActorComponent
 {
@@ -20,13 +28,14 @@ class ECODUET_API UEcoGLVActorComponent : public UActorComponent
 
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "EcoActor")
-	TMap<FString, float> EcoElderRelationVector;
+	TMap<FName, float> EcoElderRelationVector;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "EcoActor")
 	float rate = 0.f;
 
 	UClass* OwnerActorClass;
 	AActor* Owner;
+	FName SpeciesName;
 
 
 public:	
@@ -43,6 +52,7 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-	void VoltkaTick(float DeltaTime);
+	UFUNCTION(BlueprintCallable, Category = "EcoActor")
+	float VoltkaTick(float DeltaTime, TMap<FName, float> Densities);
 		
 };
