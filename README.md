@@ -10,57 +10,57 @@ You play as Noke, an ecology student trying to restore a World to a dynamic ecos
 
 ### Immediate
 
-[ ] Fix float overflow - forced 200 but they atill give birth
-[ ] Actually write a help
-[ ] Let the player kill animals for now as a "debug"-ish tool to get the feel of the ecosystem dynamic
-[ ] Empty start Fase
+- [ ] Fix float overflow - forced 200 but they atill give birth
+- [ ] Actually write a help
+- [ ] Let the player kill animals for now as a "debug"-ish tool to get the feel of the ecosystem dynamic
+- [ ] Empty start Fase
 
 ### Fase 0 : Basics
 
-[x] Game Over Logic and menu
-[x] Make a help screen that opens with the key h
-[ ] Actually write a help
-[ ] Show GLV parameters (at help?)
-[ ] Let the player kill animals for now as a "debug"-ish tool to get the feel of the ecosystem dynamic
-[x] Update the rates
+- [x] Game Over Logic and menu
+- [x] Make a help screen that opens with the key h
+- [ ] Actually write a help
+- [ ] Show GLV parameters (at help?)
+- [ ] Let the player kill animals for now as a "debug"-ish tool to get the feel of the ecosystem dynamic
+- [x] Update the rates
 
 ### Fase 1 : Sandbox
 
-[x] Add a way to modify species parameters. Should it be priority 1? Make Home really a sandbox?
-[x] Add an interaction cube to modify r
-[x] Change cube material color or light to show predation vs simbiosis
-[x] Feedback on selected cube. E.g. turn on/off light to selected cube
+- [x] Add a way to modify species parameters. Should it be priority 1? Make Home really a sandbox?
+- [x] Add an interaction cube to modify r
+- [x] Change cube material color or light to show predation vs simbiosis
+- [x] Feedback on selected cube. E.g. turn on/off light to selected cube
 
 ### Fase 2 : Empty start
 
-[ ] Make a pig elder seed, a fox elder seed and a stag elder seed.
-[ ] Make an empty map where you get the Elder tree seed and you can plant it (and gain the plant hability).
+- [ ] Make a pig elder seed, a fox elder seed and a stag elder seed.
+- [ ] Make an empty map where you get the Elder tree seed and you can plant it (and gain the plant hability).
 
 ### Fase 3 : Dungeoning
 
-[x] Make a procedural map for the tree Elder
-[ ] Add three pedestal actors, if the player places three trees there, the tree seed will appear and or the tree Elder will appear. Or maybe the Elder tree should be there already.
-[ ] Build a change-map and make a dungeon map with the animal elder seeds in them.
+- [x] Make a procedural map for the tree Elder
+- [ ] Add three pedestal actors, if the player places three trees there, the tree seed will appear and or the tree Elder will appear. Or maybe the Elder tree should be there already.
+- [ ] Build a change-map and make a dungeon map with the animal elder seeds in them.
 
 ### Fase 4
 
-[ ] Then maybe either make the dungeon better
-[x] Move to the N-species
-[ ] Improve ecosystem health feedback. e.g. Oracle: Computes N iterations and marks endangered elders
+- [ ] Then maybe either make the dungeon better
+- [x] Move to the N-species
+- [ ] Improve ecosystem health feedback. e.g. Oracle: Computes N iterations and marks endangered elders
 
 ### QA
 
-[ ] Death animation for the tree
-[ ] Animal movement turning
+- [ ] Death animation for the tree
+- [ ] Animal movement turning
 
 ### Whenever
 
-[ ] plant on raytrace or collision
-[ ] Fix the python multihome to support edit-save parameters (and maybe species deletion?)
-[ ] Check how to change character via config or something
-[ ] On equilibrium no Individual dies nor is born, since births compensate deaths in density only. It'd be nice to somehow still birth-die even if density stays constant.
-[ ] Birds
-[ ] Use a [smart material](https://docs.unrealengine.com/4.26/en-US/RenderingAndGraphics/Materials/HowTo/EmissiveGlow/) instead of lights
+- [ ] plant on raytrace or collision
+- [ ] Fix the python multihome to support edit-save parameters (and maybe species deletion?)
+- [ ] Check how to change character via config or something
+- [ ] On equilibrium no Individual dies nor is born, since births compensate deaths in density only. It'd be nice to somehow still birth-die even if density stays constant.
+- [ ] Birds
+- [ ] Use a [smart material](https://docs.unrealengine.com/4.26/en-US/RenderingAndGraphics/Materials/HowTo/EmissiveGlow/) instead of lights
 
 ## Thoughts
 
