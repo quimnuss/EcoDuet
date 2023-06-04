@@ -10,7 +10,7 @@ You play as Noke, an ecology student trying to restore a World to a dynamic ecos
 
 ### Immediate
 
-[ ] Add an interaction cube to modify r
+[ ] Fix float overflow - forced 200 but they atill give birth
 [ ] Actually write a help
 [ ] Let the player kill animals for now as a "debug"-ish tool to get the feel of the ecosystem dynamic
 [ ] Empty start Fase
@@ -27,9 +27,9 @@ You play as Noke, an ecology student trying to restore a World to a dynamic ecos
 ### Fase 1 : Sandbox
 
 [x] Add a way to modify species parameters. Should it be priority 1? Make Home really a sandbox?
-[ ] Add an interaction cube to modify r
-[ ] Change cube material color or light to show predation vs simbiosis
-[ ] Feedback on selected cube. E.g. turn on/off light to selected cube
+[x] Add an interaction cube to modify r
+[x] Change cube material color or light to show predation vs simbiosis
+[x] Feedback on selected cube. E.g. turn on/off light to selected cube
 
 ### Fase 2 : Empty start
 
@@ -48,6 +48,11 @@ You play as Noke, an ecology student trying to restore a World to a dynamic ecos
 [x] Move to the N-species
 [ ] Improve ecosystem health feedback. e.g. Oracle: Computes N iterations and marks endangered elders
 
+### QA
+
+[ ] Death animation for the tree
+[ ] Animal movement turning
+
 ### Whenever
 
 [ ] plant on raytrace or collision
@@ -55,6 +60,7 @@ You play as Noke, an ecology student trying to restore a World to a dynamic ecos
 [ ] Check how to change character via config or something
 [ ] On equilibrium no Individual dies nor is born, since births compensate deaths in density only. It'd be nice to somehow still birth-die even if density stays constant.
 [ ] Birds
+[ ] Use a [smart material](https://docs.unrealengine.com/4.26/en-US/RenderingAndGraphics/Materials/HowTo/EmissiveGlow/) instead of lights
 
 ## Thoughts
 
@@ -70,7 +76,6 @@ How could we measure successful ecosystem?
 * Great interrelation with high densities
 * Great cycles
 * Robustness to outside perturbations?
-
 
 ### About dungeons
 
@@ -107,7 +112,9 @@ If so you can clone [the repo](https://github.com/microsoft/vc-ue-extensions#bui
 
 [GlacialIndifference](https://fontlibrary.org/en/font/glacial-indifference)
 
-An ai stable diffusion prompt I used for animal icons: four colors, crow, stylized, sketch, bird, flat, sunlit from the side, high contrast, few colors, thumbnail,   cartoon crow open wings, organic painting, cartoon, matte painting, bold shapes, hard edges, app icon, trending on artstation, by sachin teng, artgerm, rossdraws.
+An ai stable diffusion prompt I used for animal icons: four colors, crow, stylized, sketch, bird, flat, sunlit from the side, high contrast, few colors, thumbnail, cartoon crow open wings, organic painting, cartoon, matte painting, bold shapes, hard edges, app icon, trending on artstation, by sachin teng, artgerm, rossdraws.
+
+With one of the images
 
 # Design
 
