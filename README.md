@@ -43,6 +43,8 @@ You play as Noke, an ecology student trying to restore a World to a dynamic ecos
 - [ ] Make an empty map where you get the Elder tree seed and you can plant it (and gain the plant hability).
 - [ ] Add a choose map option
 
+Empty levels could be actually a tutorial level. That way we practice travelling between maps as well.
+
 ### Fase 2.5: Ship Alpha
 
 - [ ] Ship a demo of the game
@@ -75,6 +77,8 @@ You play as Noke, an ecology student trying to restore a World to a dynamic ecos
 - [ ] Death animation for the tree
 - [ ] Animal turning movement
 - [ ] Check that all game mode casts are to GameModeHome (since we created Tutorial and Survival Modes)
+
+- [ ] on restart, second player controller is disconnected
 
 ### Whenever
 
