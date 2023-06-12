@@ -10,19 +10,21 @@ You play as Noke, an ecology student trying to restore a World to a dynamic ecos
 
 ### Immediate
 
-- [ ] Fix float overflow - forced 200 but they atill give birth
-- [ ] Actually write a help
-- [ ] Let the player kill animals for now as a "debug"-ish tool to get the feel of the ecosystem dynamic
-- [ ] Empty start Fase
+- [ ] Add visual instructions to the Tutorial level on what to do
+- [ ] Make a pig elder seed, a fox elder seed and a stag elder seed.
+
+- [ ] Show GLV parameters (at a GLV Menu)
 
 ### Fase 0 : Basics
 
 - [x] Game Over Logic and menu
 - [x] Make a help screen that opens with the key h
-- [ ] Actually write a help
+- [x] Actually write a help
 - [ ] Show GLV parameters (at help?)
-- [ ] Let the player kill animals for now as a "debug"-ish tool to get the feel of the ecosystem dynamic
+- [x] Let the player kill animals for now as a "debug"-ish tool to get the feel of the ecosystem dynamic
 - [x] Update the rates
+- [x] Fix missing rate cube / self-impact
+- [x] Fix float overflow - forced 200 but they still give birth -- it works correctly but spawner spawns max 1 per second
 
 ### Fase 1 : Sandbox
 
@@ -33,11 +35,23 @@ You play as Noke, an ecology student trying to restore a World to a dynamic ecos
 
 ### Fase 2 : Empty start
 
+- [x] Fase 2: Begin Empty start Fase
+- [x] Create a Tutorial Level
+- [x] Add a Tree Elder
+- [ ] Add visual instructions on what to do
 - [ ] Make a pig elder seed, a fox elder seed and a stag elder seed.
 - [ ] Make an empty map where you get the Elder tree seed and you can plant it (and gain the plant hability).
+- [ ] Add a choose map option
+
+### Fase 2.5: Ship Alpha
+
+- [ ] Ship a demo of the game
+- [ ] Add a demo video
+- [ ] Create socials
 
 ### Fase 3 : Dungeoning
 
+- [ ] Add map travel with state conservation
 - [x] Make a procedural map for the tree Elder
 - [ ] Add three pedestal actors, if the player places three trees there, the tree seed will appear and or the tree Elder will appear. Or maybe the Elder tree should be there already.
 - [ ] Build a change-map and make a dungeon map with the animal elder seeds in them.
@@ -48,10 +62,19 @@ You play as Noke, an ecology student trying to restore a World to a dynamic ecos
 - [x] Move to the N-species
 - [ ] Improve ecosystem health feedback. e.g. Oracle: Computes N iterations and marks endangered elders
 
-### QA
+### Fase 5 : Some Polishing
+
+- [ ] Change the environtment from desert to field even more according to ecosystem state
+- [ ] [Animals slope orientation](https://www.youtube.com/watch?v=YbPgJNSazec)
+
+- [ ] Rethink interactions to be more consistent on less actions
+- [ ] Remove old densities code
+
+### Quality Assurance
 
 - [ ] Death animation for the tree
-- [ ] Animal movement turning
+- [ ] Animal turning movement
+- [ ] Check that all game mode casts are to GameModeHome (since we created Tutorial and Survival Modes)
 
 ### Whenever
 
@@ -61,6 +84,11 @@ You play as Noke, an ecology student trying to restore a World to a dynamic ecos
 - [ ] On equilibrium no Individual dies nor is born, since births compensate deaths in density only. It'd be nice to somehow still birth-die even if density stays constant.
 - [ ] Birds
 - [ ] Use a [smart material](https://docs.unrealengine.com/4.26/en-US/RenderingAndGraphics/Materials/HowTo/EmissiveGlow/) instead of lights
+- [ ] Spawner only spawns 1 per second (check it with float overflow)
+
+### Nice to have
+
+- [ ] Thunder or some effect on killing a species member
 
 ## Thoughts
 
@@ -108,14 +136,6 @@ Add an ecosystem diversity number stating the number of species and also the con
 Visual Studio integration Tools is a third-party plugin so it might not be updated [in the marketplace](https://www.unrealengine.com/marketplace/en-US/product/362651520df94e4fa65492dbcba44ae2) as quickly as the unreal engine.
 If so you can clone [the repo](https://github.com/microsoft/vc-ue-extensions#building-and-installing-the-plugin) directly.
 
-## Some credits
-
-[GlacialIndifference](https://fontlibrary.org/en/font/glacial-indifference)
-
-An ai stable diffusion prompt I used for animal icons: four colors, crow, stylized, sketch, bird, flat, sunlit from the side, high contrast, few colors, thumbnail, cartoon crow open wings, organic painting, cartoon, matte painting, bold shapes, hard edges, app icon, trending on artstation, by sachin teng, artgerm, rossdraws.
-
-With one of the images
-
 # Design
 
 Each Elder has an GLVActor Component that holds the GLV multiplication function. The EcoSpeciesWatcher is the one with the two timers that compute the next GLV densities and another that Spawns/kills each species children.
@@ -125,3 +145,14 @@ The GameMode holds a Map with a SpeciesName and its density. **Important** Each 
 # Typical mistakes to remember
 
 Animal childs have to be set to auto-possess when placed into the world or spawned
+
+## Some credits
+
+[GlacialIndifference](https://fontlibrary.org/en/font/glacial-indifference)
+
+An ai stable diffusion prompt I used for animal icons: four colors, crow, stylized, sketch, bird, flat, sunlit from the side, high contrast, few colors, thumbnail, cartoon crow open wings, organic painting, cartoon, matte painting, bold shapes, hard edges, app icon, trending on artstation, by sachin teng, artgerm, rossdraws.
+
+With one of the base images being a dog of the stilized animals.
+
+
+[keyboard iconkeys](https://www.flaticon.com/search?type=icon&search-group=all&word=keyboard+button+tab&license=&color=&shape=&current_section=&author_id=&pack_id=&family_id=&style_id=&type=)

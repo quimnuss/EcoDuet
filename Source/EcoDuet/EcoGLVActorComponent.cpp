@@ -81,7 +81,7 @@ float UEcoGLVActorComponent::VoltkaTick(float DeltaTime, TMap<FName, float> Dens
 
 	if (NewDensity < 0.01)
 		NewDensity = 0;
-	if (NewDensity > 200)
+	else if (NewDensity > 200)
 		NewDensity = 200;
 
 	return NewDensity;
