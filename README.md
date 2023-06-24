@@ -10,9 +10,7 @@ You play as Noke, an ecology student trying to restore a World to a dynamic ecos
 
 ### Immediate
 
-- [ ] Add visual instructions to the Tutorial level on what to do
-- [ ] Make a pig elder seed, a fox elder seed and a stag elder seed.
-
+- [ ] Add a Level select menu
 - [ ] Show GLV parameters (at a GLV Menu)
 
 ### Fase 0 : Basics
@@ -38,8 +36,8 @@ You play as Noke, an ecology student trying to restore a World to a dynamic ecos
 - [x] Fase 2: Begin Empty start Fase
 - [x] Create a Tutorial Level
 - [x] Add a Tree Elder
-- [ ] Add visual instructions on what to do
-- [ ] Make a pig elder seed, a fox elder seed and a stag elder seed.
+- [~] Add visual instructions to the Tutorial level on what to do
+- [x] Make a pig elder seed, a fox elder seed and a stag elder seed.
 - [ ] Make an empty map where you get the Elder tree seed and you can plant it (and gain the plant hability).
 - [ ] Add a choose map option
 
@@ -47,6 +45,7 @@ Empty levels could be actually a tutorial level. That way we practice travelling
 
 ### Fase 2.5: Ship Alpha
 
+- [ ] Add a Level select menu
 - [ ] Ship a demo of the game
 - [ ] Add a demo video
 - [ ] Create socials
@@ -60,6 +59,7 @@ Empty levels could be actually a tutorial level. That way we practice travelling
 
 ### Fase 4
 
+- [ ] Make the Tutorial levels better
 - [ ] Then maybe either make the dungeon better
 - [x] Move to the N-species
 - [ ] Improve ecosystem health feedback. e.g. Oracle: Computes N iterations and marks endangered elders
@@ -78,10 +78,11 @@ Empty levels could be actually a tutorial level. That way we practice travelling
 - [ ] Animal turning movement
 - [ ] Check that all game mode casts are to GameModeHome (since we created Tutorial and Survival Modes)
 
-- [ ] on restart, second player controller is disconnected
+- [x] on restart, second player controller is disconnected
 
 ### Whenever
 
+- [ ] Change elder parameters by posessing
 - [ ] plant on raytrace or collision
 - [ ] Fix the python multihome to support edit-save parameters (and maybe species deletion?)
 - [ ] Check how to change character via config or something
@@ -89,6 +90,7 @@ Empty levels could be actually a tutorial level. That way we practice travelling
 - [ ] Birds
 - [ ] Use a [smart material](https://docs.unrealengine.com/4.26/en-US/RenderingAndGraphics/Materials/HowTo/EmissiveGlow/) instead of lights
 - [ ] Spawner only spawns 1 per second (check it with float overflow)
+- [ ] Add a pre-screen asking how many players to set the number of ecoplayers if auto-detecting doesn't work
 
 ### Nice to have
 
@@ -99,6 +101,8 @@ Empty levels could be actually a tutorial level. That way we practice travelling
 ### Ideas for later
 
 make the species gain abilities so that you can unlock a new source of nourishment
+
+Would it be nice that instead of being a human, you could swap between species and that's how you select which "tool" you're using?
 
 ### Game design
 
