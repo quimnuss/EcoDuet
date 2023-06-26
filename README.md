@@ -11,14 +11,13 @@ You play as Noke, an ecology student trying to restore a World to a dynamic ecos
 ### Immediate
 
 - [ ] Add a Level select menu
-- [ ] Show GLV parameters (at a GLV Menu)
 
 ### Fase 0 : Basics
 
 - [x] Game Over Logic and menu
 - [x] Make a help screen that opens with the key h
 - [x] Actually write a help
-- [ ] Show GLV parameters (at help?)
+- [x] Show GLV parameters (at help?)
 - [x] Let the player kill animals for now as a "debug"-ish tool to get the feel of the ecosystem dynamic
 - [x] Update the rates
 - [x] Fix missing rate cube / self-impact
@@ -39,7 +38,7 @@ You play as Noke, an ecology student trying to restore a World to a dynamic ecos
 - [~] Add visual instructions to the Tutorial level on what to do
 - [x] Make a pig elder seed, a fox elder seed and a stag elder seed.
 - [ ] Make an empty map where you get the Elder tree seed and you can plant it (and gain the plant hability).
-- [ ] Add a choose map option
+- [ ] Add a Level select menu
 
 Empty levels could be actually a tutorial level. That way we practice travelling between maps as well.
 
@@ -57,6 +56,10 @@ Empty levels could be actually a tutorial level. That way we practice travelling
 - [ ] Add three pedestal actors, if the player places three trees there, the tree seed will appear and or the tree Elder will appear. Or maybe the Elder tree should be there already.
 - [ ] Build a change-map and make a dungeon map with the animal elder seeds in them.
 
+### Fase 3.5: Flying birds dungeon
+
+- [ ] Add the flying bird dungeon
+
 ### Fase 4
 
 - [ ] Make the Tutorial levels better
@@ -64,19 +67,27 @@ Empty levels could be actually a tutorial level. That way we practice travelling
 - [x] Move to the N-species
 - [ ] Improve ecosystem health feedback. e.g. Oracle: Computes N iterations and marks endangered elders
 
+- [ ] Switch to environmental actions to change GLV parameters instead of cubes
+
 ### Fase 5 : Some Polishing
 
 - [ ] Change the environtment from desert to field even more according to ecosystem state
 - [ ] [Animals slope orientation](https://www.youtube.com/watch?v=YbPgJNSazec)
+- [ ] Improve animal selection feedbac (both elder and killing)k
 
 - [ ] Rethink interactions to be more consistent on less actions
 - [ ] Remove old densities code
+
+- [ ] Lobby and character select
+
+- [ ] Low End PC version
 
 ### Quality Assurance
 
 - [ ] Death animation for the tree
 - [ ] Animal turning movement
 - [ ] Check that all game mode casts are to GameModeHome (since we created Tutorial and Survival Modes)
+- [ ] changing GLV in menu should change cube size in Elders (should it?)
 
 - [x] on restart, second player controller is disconnected
 
