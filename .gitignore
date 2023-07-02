@@ -76,6 +76,7 @@ DerivedDataCache/*
 # let's ignore all sotck and added content
 Content/*
 !Content/EcoDuet
+!Content/Localization
 
 # huge assets
 

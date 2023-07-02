@@ -10,7 +10,7 @@ You play as Noke, an ecology student trying to restore a World to a dynamic ecos
 
 ### Immediate
 
-- [ ] Add a Level select menu
+- [~] Add a Level select menu
 
 ### Fase 0 : Basics
 
@@ -91,6 +91,8 @@ Empty levels could be actually a tutorial level. That way we practice travelling
 
 - [x] on restart, second player controller is disconnected
 
+- [ ] Find out what is requiring more texture budget than usual. [Increased to 3000](https://www.youtube.com/watch?v=ahAX3w5ovts) with `r.Streaming.PoolSize 3000`
+
 ### Whenever
 
 - [ ] Change elder parameters by posessing
@@ -106,6 +108,20 @@ Empty levels could be actually a tutorial level. That way we practice travelling
 ### Nice to have
 
 - [ ] Thunder or some effect on killing a species member
+
+## UE Tips
+
+To record gameplay the fastest is:
+
+Click on the viewport -> F11 for quasi-fullscreen -> Shift+F11 for real fullscreen -> Alt+P to play
+
+To revert:
+
+Stop Game -> F11
+
+It will remember the real fullscreen the next time, so you only need to press F11 to come in and out of real fullscreen
+
+I didn't need this in the end, but might be valuable to know: F10 to hide menus
 
 ## Thoughts
 
