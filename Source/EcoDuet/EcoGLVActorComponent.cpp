@@ -22,7 +22,10 @@ void UEcoGLVActorComponent::BeginPlay()
 	Owner = this->GetOwner();
 	
 	SpeciesName = this->ComponentTags.Num() > 0 ? this->ComponentTags[0] : "Unknown";
-		
+
+	//Done at blueprint
+	//MySpecies = this->ComponentTags.Num() > 0 ? this->ComponentTags[0] : "Unknown";
+
 }
 
 void UEcoGLVActorComponent::EndPlay(const EEndPlayReason::Type EndPlayReason)
@@ -39,7 +42,56 @@ void UEcoGLVActorComponent::TickComponent(float DeltaTime, ELevelTick TickType, 
 	// ...
 }
 
-float UEcoGLVActorComponent::VoltkaTick(float DeltaTime, TMap<FName, float> Densities)
+//float UEcoGLVActorComponent::VoltkaTick(float DeltaTime, TMap<FName, float> Densities)
+//{
+//
+//	//AEcoGameModeHome* GameMode = Cast<AEcoGameModeHome>(UGameplayStatics::GetGameMode(this));
+//
+//	//TODO maybe this should be encompassed in a c++ class elder
+//	// OR passed as an argument and returns newDensity
+//	//TMap<FString, float> Densities = GameMode->EcoDensities;
+//
+//	if (!Densities.Contains(SpeciesName))
+//	{
+//		if (GEngine)
+//		{
+//			FString Error = FString::Printf(TEXT("VoltkaTickC++ Unknown species %s"), *SpeciesName.ToString());
+//			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, *Error);
+//		}
+//		return 0;
+//	}
+//
+//
+//	float OldDensity = Densities.FindRef(SpeciesName);
+//	float NewDensity = rate * OldDensity;
+//
+//	if (GEngine)
+//	{
+//		FString Info = FString::Printf(TEXT("Known species %s with density %f"), *SpeciesName.ToString(), OldDensity);
+//		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, *Info);
+//	}
+//
+//	for (const TPair<FName, float>& EcoElderRelationPair : EcoElderRelationVector)
+//	{
+//		FName ElderName = EcoElderRelationPair.Key;
+//		float Relation = EcoElderRelationPair.Value;
+//		float OtherDensity = Densities.FindRef(ElderName);
+//
+//		NewDensity += OldDensity * Relation * OtherDensity;
+//	}
+//
+//	NewDensity = OldDensity + 0.1f * NewDensity;
+//
+//	if (NewDensity < 0.01)
+//		NewDensity = 0;
+//	else if (NewDensity > 200)
+//		NewDensity = 200;
+//
+//	return NewDensity;
+//
+//}
+
+float UEcoGLVActorComponent::VoltkaSpeciesTick(float DeltaTime, TMap<EEcoSpeciesType, float> Densities)
 {
 
 	//AEcoGameModeHome* GameMode = Cast<AEcoGameModeHome>(UGameplayStatics::GetGameMode(this));
@@ -48,18 +100,19 @@ float UEcoGLVActorComponent::VoltkaTick(float DeltaTime, TMap<FName, float> Dens
 	// OR passed as an argument and returns newDensity
 	//TMap<FString, float> Densities = GameMode->EcoDensities;
 
-	if (!Densities.Contains(SpeciesName))
+	if (!Densities.Contains(MySpecies))
 	{
 		if (GEngine)
 		{
-			FString Error = FString::Printf(TEXT("VoltkaTickC++ Unknown species %s"), *SpeciesName.ToString());
+			FString SpeciesDisplayName = StaticEnum<EEcoSpeciesType>()->GetValueAsString(MySpecies);
+			FString Error = FString::Printf(TEXT("VoltkaTickC++ Unknown species %s"), *SpeciesDisplayName);
 			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, *Error);
 		}
 		return 0;
 	}
-	
 
-	float OldDensity = Densities.FindRef(SpeciesName);
+
+	float OldDensity = Densities.FindRef(MySpecies);
 	float NewDensity = rate * OldDensity;
 
 	//if (GEngine)
@@ -68,11 +121,11 @@ float UEcoGLVActorComponent::VoltkaTick(float DeltaTime, TMap<FName, float> Dens
 	//	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, *Info);
 	//}
 
-	for (const TPair<FName, float>& EcoElderRelationPair : EcoElderRelationVector)
+	for (const TPair<EEcoSpeciesType, float>& EcoElderRelationPair : EcoSpeciesRelationVector)
 	{
-		FName ElderName = EcoElderRelationPair.Key;
+		EEcoSpeciesType ElderSpecies = EcoElderRelationPair.Key;
 		float Relation = EcoElderRelationPair.Value;
-		float OtherDensity = Densities.FindRef(ElderName);
+		float OtherDensity = Densities.FindRef(ElderSpecies);
 
 		NewDensity += OldDensity * Relation * OtherDensity;
 	}

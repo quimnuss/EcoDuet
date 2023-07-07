@@ -10,7 +10,7 @@ You play as Noke, an ecology student trying to restore a World to a dynamic ecos
 
 ### Immediate
 
-- [~] Add a Level select menu
+- [ ] Make an empty map where you get the Elder tree seed and you can plant it (and gain the plant hability).
 
 ### Fase 0 : Basics
 
@@ -38,20 +38,20 @@ You play as Noke, an ecology student trying to restore a World to a dynamic ecos
 - [~] Add visual instructions to the Tutorial level on what to do
 - [x] Make a pig elder seed, a fox elder seed and a stag elder seed.
 - [ ] Make an empty map where you get the Elder tree seed and you can plant it (and gain the plant hability).
-- [ ] Add a Level select menu
+- [x] Add a Level select menu
 
 Empty levels could be actually a tutorial level. That way we practice travelling between maps as well.
 
 ### Fase 2.5: Ship Alpha
 
-- [ ] Add a Level select menu
+- [x] Add a Level select menu
 - [ ] Ship a demo of the game
 - [ ] Add a demo video
 - [ ] Create socials
 
 ### Fase 3 : Dungeoning
 
-- [ ] Add map travel with state conservation
+- [-] Add map travel with state conservation
 - [x] Make a procedural map for the tree Elder
 - [ ] Add three pedestal actors, if the player places three trees there, the tree seed will appear and or the tree Elder will appear. Or maybe the Elder tree should be there already.
 - [ ] Build a change-map and make a dungeon map with the animal elder seeds in them.
@@ -78,7 +78,7 @@ Empty levels could be actually a tutorial level. That way we practice travelling
 - [ ] Rethink interactions to be more consistent on less actions
 - [ ] Remove old densities code
 
-- [ ] Lobby and character select
+- [x] Lobby and character select
 
 - [ ] Low End PC version
 
@@ -92,6 +92,7 @@ Empty levels could be actually a tutorial level. That way we practice travelling
 - [x] on restart, second player controller is disconnected
 
 - [ ] Find out what is requiring more texture budget than usual. [Increased to 3000](https://www.youtube.com/watch?v=ahAX3w5ovts) with `r.Streaming.PoolSize 3000`
+	- Looks like it's Koikos Hair
 
 ### Whenever
 
@@ -103,7 +104,7 @@ Empty levels could be actually a tutorial level. That way we practice travelling
 - [ ] Birds
 - [ ] Use a [smart material](https://docs.unrealengine.com/4.26/en-US/RenderingAndGraphics/Materials/HowTo/EmissiveGlow/) instead of lights
 - [ ] Spawner only spawns 1 per second (check it with float overflow)
-- [ ] Add a pre-screen asking how many players to set the number of ecoplayers if auto-detecting doesn't work
+- [x] Add a pre-screen asking how many players to set the number of ecoplayers if auto-detecting doesn't work
 
 ### Nice to have
 
