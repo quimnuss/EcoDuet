@@ -11,6 +11,8 @@ You play as Noke, an ecology student trying to restore a World to a dynamic ecos
 ### Immediate
 
 - [ ] Make an empty map where you get the Elder tree seed and you can plant it (and gain the plant hability).
+- [ ] Make the elder in extinction rates, do something to the environment so that it survives
+- [ ] Switch to environmental actions to change GLV parameters instead of cubes
 
 ### Fase 0 : Basics
 
@@ -39,6 +41,7 @@ You play as Noke, an ecology student trying to restore a World to a dynamic ecos
 - [x] Make a pig elder seed, a fox elder seed and a stag elder seed.
 - [ ] Make an empty map where you get the Elder tree seed and you can plant it (and gain the plant hability).
 - [x] Add a Level select menu
+- [ ] Make the elder in extinction rates, do something to the environment so that it survives
 
 Empty levels could be actually a tutorial level. That way we practice travelling between maps as well.
 
@@ -72,11 +75,11 @@ Empty levels could be actually a tutorial level. That way we practice travelling
 ### Fase 5 : Some Polishing
 
 - [ ] Change the environtment from desert to field even more according to ecosystem state
-- [ ] [Animals slope orientation](https://www.youtube.com/watch?v=YbPgJNSazec)
+- [ ] Animals slope orientation](https://www.youtube.com/watch?v=YbPgJNSazec)
 - [ ] Improve animal selection feedbac (both elder and killing)k
 
 - [ ] Rethink interactions to be more consistent on less actions
-- [ ] Remove old densities code
+- [x] Remove old densities code
 
 - [x] Lobby and character select
 
