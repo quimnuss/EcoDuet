@@ -80,10 +80,17 @@ Empty levels could be actually a tutorial level. That way we practice travelling
 
 - [ ] Rethink interactions to be more consistent on less actions
 - [x] Remove old densities code
+- [ ] Use EcoNone for rate instead of R?
 
 - [x] Lobby and character select
 
 - [ ] Low End PC version
+
+### Fase 6 : Step up
+
+- [ ] Variations of Elders.
+
+We can have GLV paramaters mutations that use the same relation in the counterpart. E.g. Fox1 Fox2 but only Pig1 which is affected by Fox1+Fox2
 
 ### Quality Assurance
 
