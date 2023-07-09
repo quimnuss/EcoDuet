@@ -10,8 +10,8 @@ You play as Noke, an ecology student trying to restore a World to a dynamic ecos
 
 ### Immediate
 
-- [ ] Make an empty map where you get the Elder tree seed and you can plant it (and gain the plant hability).
-- [ ] Make the elder in extinction rates, do something to the environment so that it survives
+- [x] Make an empty map where you get the Elder tree seed and you can plant it (and gain the plant hability).
+- [ ] Make the elder with extinction rates and the player has to do something to the environment so that it survives
 - [ ] Switch to environmental actions to change GLV parameters instead of cubes
 
 ### Fase 0 : Basics
@@ -37,11 +37,11 @@ You play as Noke, an ecology student trying to restore a World to a dynamic ecos
 - [x] Fase 2: Begin Empty start Fase
 - [x] Create a Tutorial Level
 - [x] Add a Tree Elder
-- [~] Add visual instructions to the Tutorial level on what to do
+- [-] Add visual instructions to the Tutorial level on what to do
 - [x] Make a pig elder seed, a fox elder seed and a stag elder seed.
-- [ ] Make an empty map where you get the Elder tree seed and you can plant it (and gain the plant hability).
+- [x] Make an empty map where you get the Elder tree seed and you can plant it (and gain the plant hability).
 - [x] Add a Level select menu
-- [ ] Make the elder in extinction rates, do something to the environment so that it survives
+- [ ] Make the elder with extinction rates and the player has to do something to the environment so that it survives
 
 Empty levels could be actually a tutorial level. That way we practice travelling between maps as well.
 
@@ -56,7 +56,7 @@ Empty levels could be actually a tutorial level. That way we practice travelling
 
 - [-] Add map travel with state conservation
 - [x] Make a procedural map for the tree Elder
-- [ ] Add three pedestal actors, if the player places three trees there, the tree seed will appear and or the tree Elder will appear. Or maybe the Elder tree should be there already.
+- [~] Add three pedestal actors, if the player places three trees there, the tree seed will appear and or the tree Elder will appear. Or maybe the Elder tree should be there already.
 - [ ] Build a change-map and make a dungeon map with the animal elder seeds in them.
 
 ### Fase 3.5: Flying birds dungeon
@@ -71,16 +71,22 @@ Empty levels could be actually a tutorial level. That way we practice travelling
 - [ ] Improve ecosystem health feedback. e.g. Oracle: Computes N iterations and marks endangered elders
 
 - [ ] Switch to environmental actions to change GLV parameters instead of cubes
+- [x] Rain
+- [x] Weather system
 
 ### Fase 5 : Some Polishing
 
-- [ ] Change the environtment from desert to field even more according to ecosystem state
+- [x] Change the environtment from desert to field even more according to ecosystem state
 - [ ] Animals slope orientation](https://www.youtube.com/watch?v=YbPgJNSazec)
-- [ ] Improve animal selection feedbac (both elder and killing)k
+- [ ] Improve animal selection feedback (both elder and killing)k
+- [ ] Seasons system
+- [ ] Make weather changes gradual
+
 
 - [ ] Rethink interactions to be more consistent on less actions
 - [x] Remove old densities code
 - [ ] Use EcoNone for rate instead of R?
+- [ ] AddElder should be handled by species manager instead of gamemode
 
 - [x] Lobby and character select
 
