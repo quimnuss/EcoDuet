@@ -43,7 +43,9 @@ You play as Noke, an ecology student trying to restore a World to a dynamic ecos
 - [x] Add a Level select menu
 - [ ] Make the elder with extinction rates and the player has to do something to the environment so that it survives
 
-Empty levels could be actually a tutorial level. That way we practice travelling between maps as well.
+The trees go extinct as-is. To prevent that, the ecologist can throw compost to the area. The compost dissolves into the ground and gives a temporary +0.1 at the birth rate of the trees. The problem is that after the period, they start dying again. To fix this, we will teach the player (how?) that a pig/deer would provide the same function and be stable.
+
+To get the deer seed we could either spawn it in the level or do the dungeon already. Might be good to spawn it in the level to introduce dungeoning later on.
 
 ### Fase 2.5: Ship Alpha
 
@@ -115,7 +117,7 @@ We can have GLV paramaters mutations that use the same relation in the counterpa
 - [ ] Change elder parameters by posessing
 - [ ] plant on raytrace or collision
 - [ ] Fix the python multihome to support edit-save parameters (and maybe species deletion?)
-- [ ] Check how to change character via config or something
+- [x] Check how to change character via config or something
 - [ ] On equilibrium no Individual dies nor is born, since births compensate deaths in density only. It'd be nice to somehow still birth-die even if density stays constant.
 - [ ] Birds
 - [ ] Use a [smart material](https://docs.unrealengine.com/4.26/en-US/RenderingAndGraphics/Materials/HowTo/EmissiveGlow/) instead of lights
