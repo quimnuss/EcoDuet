@@ -10,8 +10,7 @@ You play as Noke, an ecology student trying to restore a World to a dynamic ecos
 
 ### Immediate
 
-- [x] Make an empty map where you get the Elder tree seed and you can plant it (and gain the plant hability).
-- [ ] Make the elder with extinction rates and the player has to do something to the environment so that it survives
+- [ ] Maintain player toolbox and home seeds between server travel
 - [ ] Switch to environmental actions to change GLV parameters instead of cubes
 
 ### Fase 0 : Basics
@@ -41,7 +40,7 @@ You play as Noke, an ecology student trying to restore a World to a dynamic ecos
 - [x] Make a pig elder seed, a fox elder seed and a stag elder seed.
 - [x] Make an empty map where you get the Elder tree seed and you can plant it (and gain the plant hability).
 - [x] Add a Level select menu
-- [ ] Make the elder with extinction rates and the player has to do something to the environment so that it survives
+- [x] Make the elder with extinction rates and the player has to do something to the environment so that it survives
 
 The trees go extinct as-is. To prevent that, the ecologist can throw compost to the area. The compost dissolves into the ground and gives a temporary +0.1 at the birth rate of the trees. The problem is that after the period, they start dying again. To fix this, we will teach the player (how?) that a pig/deer would provide the same function and be stable.
 
