@@ -11,7 +11,15 @@ You play as Noke, an ecology student trying to restore a World to a dynamic ecos
 ### Immediate
 
 - [ ] Maintain player toolbox and home seeds between server travel
+- [ ] Check that elder data is saved and loaded
 - [ ] Switch to environmental actions to change GLV parameters instead of cubes
+
+- [ ] Finish intro cinematic:
+- [ ] animal scene
+- [ ] skip button
+- [ ] Crowd
+
+- [ ] Copy the mixamo retargetter from another project or fix it. Then fix sadwalk retarget.
 
 ### Fase 0 : Basics
 
@@ -99,6 +107,13 @@ To get the deer seed we could either spawn it in the level or do the dungeon alr
 
 We can have GLV paramaters mutations that use the same relation in the counterpart. E.g. Fox1 Fox2 but only Pig1 which is affected by Fox1+Fox2
 
+### Fase 7 : Intro cinematic
+
+- [ ] Finish intro cinematic:
+- [ ] animal scene
+- [ ] skip button
+- [ ] Crowd
+
 ### Quality Assurance
 
 - [ ] Death animation for the tree
@@ -110,6 +125,8 @@ We can have GLV paramaters mutations that use the same relation in the counterpa
 
 - [ ] Find out what is requiring more texture budget than usual. [Increased to 3000](https://www.youtube.com/watch?v=ahAX3w5ovts) with `r.Streaming.PoolSize 3000`
 	- Looks like it's Koikos Hair
+
+- [ ] Copy the mixamo retargetter from another project or fix it. Then fix sadwalk retarget.
 
 ### Whenever
 
@@ -209,3 +226,6 @@ With one of the base images being a dog of the stilized animals.
 
 
 [keyboard iconkeys](https://www.flaticon.com/search?type=icon&search-group=all&word=keyboard+button+tab&license=&color=&shape=&current_section=&author_id=&pack_id=&family_id=&style_id=&type=)
+
+
+[Pebbles](https://blendswap.com/blend/22885)
