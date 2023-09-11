@@ -10,16 +10,12 @@ You play as Noke, an ecology student trying to restore a World to a dynamic ecos
 
 ### Immediate
 
-- [ ] Maintain player toolbox and home seeds between server travel
-- [ ] Check that elder data is saved and loaded
 - [ ] Switch to environmental actions to change GLV parameters instead of cubes
 
-- [ ] Finish intro cinematic:
-- [ ] animal scene
-- [ ] skip button
-- [ ] Crowd
+- [ ] Add funghi species -- or maybe rethink the whole structure and base it on species data with only one or two actors and components
 
-- [ ] Copy the mixamo retargetter from another project or fix it. Then fix sadwalk retarget.
+Makes sense to be able to just create a ton of species data and not have to create child actors
+Specially for non moving species
 
 ### Fase 0 : Basics
 
@@ -63,10 +59,13 @@ To get the deer seed we could either spawn it in the level or do the dungeon alr
 
 ### Fase 3 : Dungeoning
 
-- [-] Add map travel with state conservation
+- [x] Add map travel with state conservation
 - [x] Make a procedural map for the tree Elder
 - [~] Add three pedestal actors, if the player places three trees there, the tree seed will appear and or the tree Elder will appear. Or maybe the Elder tree should be there already.
-- [ ] Build a change-map and make a dungeon map with the animal elder seeds in them.
+- [x] Build a change-map and make a dungeon map with the animal elder seeds in them.
+
+- [x] Maintain player toolbox and home seeds between server travel
+- [x] Check that elder data is saved and loaded
 
 ### Fase 3.5: Flying birds dungeon
 
@@ -99,6 +98,9 @@ To get the deer seed we could either spawn it in the level or do the dungeon alr
 
 - [x] Lobby and character select
 
+- [ ] Copy the mixamo retargetter from another project or fix it. Then fix sadwalk retarget.
+- [ ] Add footprint decal
+
 - [ ] Low End PC version
 
 ### Fase 6 : Step up
@@ -109,10 +111,13 @@ We can have GLV paramaters mutations that use the same relation in the counterpa
 
 ### Fase 7 : Intro cinematic
 
-- [ ] Finish intro cinematic:
-- [ ] animal scene
-- [ ] skip button
-- [ ] Crowd
+- [x] Finish intro cinematic:
+- [x] animal scene
+- [x] skip button
+- [x] Crowd
+- [ ] Human crowd
+- [ ] Clothing (cloack)
+- [ ] Death after a timespan and kill zones
 
 ### Quality Assurance
 
@@ -216,6 +221,51 @@ The GameMode holds a Map with a SpeciesName and its density. **Important** Each 
 
 Animal childs have to be set to auto-possess when placed into the world or spawned
 
+### Game design
+
+A given glv is an orbit around an equilibrium point. Changes in glv will move that glv equilibria,
+and it could put the orbit into the frontier of death. When that happens, the player can
+change the glv parameters to move the equilibrium again out of the death zone 
+or go closer to the equilibrium so that the orbit is smaller.
+
+A problem we have is that as a beginner, it is not obvious how our actions affect the ecosystem.
+Particularly, improving the conditions of the prey, increases the population
+equilibrium of the predator, not the prey, counterintuitevely.
+
+Maybe that is the needed takeaway.
+
+### About glv as orbital mechanics
+
+is glv deltav? maybe, but n-bodies, since changing the glv orbit afects all orbits.
+
+Maybe we could do ksp-like by limiting a predator-prey which we have to increase population
+
+wikipedia "One may also plot solutions parametrically as orbits in phase space, 
+without representing time, but with one axis representing the number of prey
+and the other axis representing the densities of predators for all times."
+
+In orbital mechanics you model planets moving around influenced by each other,
+but in our case the equilibria are fixed, and what orbits is the traversing vessel
+with position as population densities. So the simili would be a particle traversing
+fixed gravitational wells, where each gravitational well is an equilibria given a 
+number of existing species.
+
+Fundamental difference is that the equilibria or wells only exist depending on the
+existing species.
+
+Can generalized lotka volterra have 2 positive equilibria? I believe not
+unless glv changes dramatically if traveller reaches a certain orbit,
+effectivelly changing the sphere of influence kps-like. Which is cool too!
+
+It would play like this, if you manage to raise the orbit, the species evolve
+and a new glv equilibrium is formed
+
+I need to ask a mathematician what are the appropiate tools to visualize/work with
+N-dimensional phase-graph of a traversing population density.
+It is not an n-body problem but a n-dimensional field computation
+with an arbitrarily small crashing zone if we forbid the atto-fox problem,
+hence population does not recover from small densities
+
 ## Some credits
 
 [GlacialIndifference](https://fontlibrary.org/en/font/glacial-indifference)
@@ -225,7 +275,7 @@ An ai stable diffusion prompt I used for animal icons: four colors, crow, styliz
 With one of the base images being a dog of the stilized animals.
 
 
-[keyboard iconkeys](https://www.flaticon.com/search?type=icon&search-group=all&word=keyboard+button+tab&license=&color=&shape=&current_section=&author_id=&pack_id=&family_id=&style_id=&type=)
-
+[keyboard iconkeys 1](https://www.flaticon.com/packs/keyboard-keys-10)
+[keyboard iconkeys 2](https://www.flaticon.com/search?author_id=838&style_id=1370&word=keyboard-button)
 
 [Pebbles](https://blendswap.com/blend/22885)
